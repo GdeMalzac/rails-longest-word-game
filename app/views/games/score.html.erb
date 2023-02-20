@@ -1,0 +1,6 @@
+<h1>Hello score!</h1>
+<%= params[:letters].downcase.split(" ") %>
+<%= params[:answer].chars %>
+<%= params[:letters].downcase.split(" ") - params[:answer].chars %>
+
+<%# mettre .include? "eachof the elements from params:answer" %>

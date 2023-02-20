@@ -1,0 +1,21 @@
+<h1>New game</h1>
+
+<div>
+<% @letters.each do |letter| %>
+  <div class="d-inline mb-2 bg-primary text-white"> <%= letter %> </div>
+  <% end %>
+  <%# incapable de mettre tout ça en forme %>
+</div>
+
+<form class="form-inline" action="/score" method="GET" data-turbo="false">
+  <div class="form-group mb-2">
+    <label for="wordToFind">"What is the longest word you can find?"</>
+    <input type="text" class="form-control" id="wordToFind" placeholder="type a word here" name="answer">
+  </div>
+  <div class="form-group mb-2">
+  <button type="submit" class="btn btn-primary">Play</button>
+  </div>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= hidden_field_tag :letters, @letters %>
+<%# incapable de mettre le bouton Play sur la même ligne %>
+</form>
